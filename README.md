@@ -1,4 +1,6 @@
 # tinyproxy
+[![Build Status](https://travis-ci.org/shazi7804/puppet-tinyproxy.svg?branch=master)](https://travis-ci.org/shazi7804/puppet-tinyproxy)
+
 
 #### Table of Contents
 
@@ -48,30 +50,30 @@ class { '::tinyproxy':
 class { '::tinyproxy':
   filter_default_deny => 'Yes',
   filter_file         => '/etc/tinyproxy/tinyproxy_filter.conf',
-  filter_extended     => '128'
+  filter_extended     => 'On'.
+  manage_filter_list  => true,
+}
+```
+
+```puppet
+class { '::tinyproxy::filter':
+  filter => ['^apt\.puppetlabs\.com$',
+             '^github\.com$',]
 }
 ```
 
 
 ## Reference
 
-Here, include a complete list of your module's classes, types, providers,
-facts, along with the parameters for each. Users refer to this section (thus
-the name "Reference") to find specific details; most users don't read it per
-se.
+### Classes
 
-## Limitations
+#### Public classes
 
-This is where you list OS compatibility, version compatibility, etc. If there
-are Known Issues, you might want to include them under their own heading here.
+* tinyproxy: Main class, includes all other classes.
 
-## Development
+#### Private classes
 
-Since your module is awesome, other users will want to play with it. Let them
-know what the ground rules for contributing are.
-
-## Release Notes/Contributors/Etc. **Optional**
-
-If you aren't using changelog, put your release notes here (though you should
-consider using changelog). You can also add any additional sections you feel
-are necessary or important to include here. Please use the `## ` header.
+* tinyproxy::install: Handles the packages.
+* tinyproxy::config: Handles the config.
+* tinyproxy::filter: Handles the filter list.
+* tinyproxy::service: Handles the service.

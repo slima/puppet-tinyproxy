@@ -49,7 +49,7 @@ class tinyproxy (
   String $package_name,
   String $tinyproxy_dir,
   String $tinyproxy_config,
-  Boolean $manage_filter_list,
+  Boolean $manage_filter,
   String $filter_list,
   Array $allow_hosts,
   Optional[String] $connect_port,
