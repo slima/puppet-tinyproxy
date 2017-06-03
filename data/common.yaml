@@ -2,6 +2,9 @@ tinyproxy::manage_service: true
 tinyproxy::service_name: 'tinyproxy'
 tinyproxy::manage_package: true
 tinyproxy::package_name: 'tinyproxy'
+tinyproxy::tinyproxy_dir: '/etc/tinyproxy'
+tinyproxy::manage_filter_list: true
+tinyproxy::filter_list: '/etc/tinyproxy/filter.conf'
 tinyproxy::tinyproxy_config: '/etc/tinyproxy.conf'
 tinyproxy::allow_hosts:
   - '127.0.0.0/32'

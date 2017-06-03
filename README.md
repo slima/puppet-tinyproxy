@@ -14,50 +14,44 @@
 
 ## Description
 
-Start with a one- or two-sentence summary of what the module does and/or what
-problem it solves. This is your 30-second elevator pitch for your module.
-Consider including OS/Puppet version it works with.
-
-You can give more descriptive information in a second paragraph. This paragraph
-should answer the questions: "What does this module *do*?" and "Why would I use
-it?" If your module has a range of functionality (installation, configuration,
-management, etc.), this is the time to mention it.
+The aws agent module installs, configures, and manages the tinyproxy service across a range of operating systems and distributions.
 
 ## Setup
 
-### What tinyproxy affects **OPTIONAL**
-
-If it's obvious what your module touches, you can skip this section. For
-example, folks can probably figure out that your mysql_instance module affects
-their MySQL instances.
-
-If there's more that they should know about, though, this is the place to mention:
-
-* A list of files, packages, services, or operations that the module will alter,
-  impact, or execute.
-* Dependencies that your module automatically installs.
-* Warnings or other important notices.
-
-### Setup Requirements **OPTIONAL**
-
-If your module requires anything extra before setting up (pluginsync enabled,
-etc.), mention it here.
-
-If your most recent release breaks compatibility or requires particular steps
-for upgrading, you might want to include an additional "Upgrading" section
-here.
-
 ### Beginning with tinyproxy
 
-The very basic steps needed for a user to get the module up and running. This
-can include setup steps, if necessary, or it can be an example of the most
-basic use of the module.
+`include '::tinyproxy'` is enough to get you up and running.
 
 ## Usage
 
-This section is where you describe how to customize, configure, and do the
-fancy stuff with your module here. It's especially helpful if you include usage
-examples and code samples for doing things with your module.
+All parameters for the ntp module are contained within the main `::tinyproxy` class, so for any function of the module, set the options you want. See the common usages below for examples.
+
+### Install and enable tinyproxy
+
+```puppet
+include '::tinyproxy'
+```
+
+### Configuring general
+
+```puppet
+class { '::tinyproxy':
+  allow_hosts       => ['192.168.0.0/24','172.16.0.0/24'],
+  max_clients       => '128',
+  max_spare_servers => '128'
+}
+```
+
+### Configuring white list
+
+```puppet
+class { '::tinyproxy':
+  filter_default_deny => 'Yes',
+  filter_file         => '/etc/tinyproxy/tinyproxy_filter.conf',
+  filter_extended     => '128'
+}
+```
+
 
 ## Reference
 
