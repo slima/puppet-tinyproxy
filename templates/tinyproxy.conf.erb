@@ -1,0 +1,62 @@
+# Managed by puppet , do not edit it !!
+
+<% scope.lookupvar('tinyproxy::allow_hosts').each do |host| -%>
+Allow <%= host %>
+<% end -%>
+<% scope.lookupvar('tinyproxy::connect_port').each do |port| -%>
+ConnectPort <%= port %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::default_error_file') -%>
+DefaultErrorFile <%= scope.lookupvar('tinyproxy::default_error_file') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::filter_default_deny') -%>
+FilterDefaultDeny <%= scope.lookupvar('tinyproxy::filter_default_deny') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::filter_file') -%>
+Filter <%= scope.lookupvar('tinyproxy::filter_file') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::filter_extended') -%>
+FilterExtended <%= scope.lookupvar('tinyproxy::filter_extended') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::user') -%>
+User <%= scope.lookupvar('tinyproxy::user') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::group') -%>
+Group <%= scope.lookupvar('tinyproxy::group') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::log_file') -%>
+Logfile <%= scope.lookupvar('tinyproxy::log_file') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::log_level') -%>
+LogLevel <%= scope.lookupvar('tinyproxy::log_level') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::max_clients') -%>
+MaxClients <%= scope.lookupvar('tinyproxy::max_clients') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::max_requests_perchild') -%>
+MaxRequestsPerChild <%= scope.lookupvar('tinyproxy::max_requests_perchild') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::max_spare_servers') -%>
+MaxSpareServers <%= scope.lookupvar('tinyproxy::max_spare_servers') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::min_spare_servers') -%>
+MinSpareServers <%= scope.lookupvar('tinyproxy::min_spare_servers') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::pid_file') -%>
+PidFile <%= scope.lookupvar('tinyproxy::pid_file') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::port') -%>
+Port <%= scope.lookupvar('tinyproxy::port') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::start_servers') -%>
+StartServers <%= scope.lookupvar('tinyproxy::start_servers') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::stat_file') -%>
+StatFile <%= scope.lookupvar('tinyproxy::stat_file') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::timeout') -%>
+Timeout <%= scope.lookupvar('tinyproxy::timeout') %>
+<% end -%>
+<% if scope.lookupvar('tinyproxy::via_proxy_name') -%>
+ViaProxyName <%= scope.lookupvar('tinyproxy::via_proxy_name') %>
+<% end -%>

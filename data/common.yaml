@@ -1,0 +1,25 @@
+tinyproxy::manage_service: true
+tinyproxy::service_name: 'tinyproxy'
+tinyproxy::package_name: 'tinyproxy'
+tinyproxy::tinyproxy_config: '/etc/tinyproxy.conf'
+tinyproxy::allow_hosts:
+  - '127.0.0.0/32'
+tinyproxy::connect_port: '443'
+tinyproxy::default_error_file: '/usr/share/tinyproxy/default.html'
+tinyproxy::filter_default_deny: ~
+tinyproxy::filter_file: ~
+tinyproxy::filter_extended: ~
+tinyproxy::user: 'nobody'
+tinyproxy::group: 'nogroup'
+tinyproxy::log_file: '/var/log/tinyproxy/tinyproxy.log"'
+tinyproxy::log_level: 'Info'
+tinyproxy::max_clients: '32'
+tinyproxy::max_requests_perchild: '0'
+tinyproxy::max_spare_servers: '64'
+tinyproxy::min_spare_servers: '32'
+tinyproxy::pid_file: '/var/run/tinyproxy/tinyproxy.pid'
+tinyproxy::port: '3128'
+tinyproxy::start_servers: '32'
+tinyproxy::stat_file: '/usr/share/tinyproxy/stats.html'
+tinyproxy::timeout: '600'
+tinyproxy::via_proxy_name: 'tinyproxy'
