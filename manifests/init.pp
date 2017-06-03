@@ -45,9 +45,10 @@
 class tinyproxy (
   Boolean $manage_service,
   String $service_name,
-  Boolean $package_name,
+  Boolean $manage_package,
+  String $package_name,
   String $tinyproxy_config,
-  String[Array] $allow_hosts,
+  Array $allow_hosts,
   Optional[String] $connect_port,
   Optional[String] $default_error_file,
   Optional[String] $filter_default_deny,
