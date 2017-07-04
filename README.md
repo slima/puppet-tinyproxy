@@ -51,14 +51,14 @@ class { '::tinyproxy':
   filter_default_deny => 'Yes',
   filter_file         => '/etc/tinyproxy/tinyproxy_filter.conf',
   filter_extended     => 'On'.
-  manage_filter_list  => true,
+  manage_filter       => true,
 }
 ```
 
 ```puppet
 class { '::tinyproxy::filter':
-  filter => ['^apt\.puppetlabs\.com$',
-             '^github\.com$',]
+  filters => ['^apt\.puppetlabs\.com$',
+              '^github\.com$',]
 }
 ```
 

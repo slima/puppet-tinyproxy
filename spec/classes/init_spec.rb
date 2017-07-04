@@ -1,6 +1,21 @@
 require 'spec_helper'
-describe 'tinyproxy' do
-  context 'with default values for all parameters' do
-    it { should contain_class('tinyproxy') }
+
+describe 'tinyproxy', :type => 'class' do
+  context 'with defaults for all parameters' do
+    let(:facts) do { 
+      :osfamily => 'Debian',
+    }
+    end
+    it do
+      should contain_class('tinyproxy')
+      should contain_class('tinyproxy::install')
+      should contain_class('tinyproxy::config')
+      should contain_class('tinyproxy::service')
+    end
+
+    it do
+      should compile.with_all_deps
+    end
   end
+  
 end

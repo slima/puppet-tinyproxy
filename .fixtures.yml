@@ -1,0 +1,3 @@
+fixtures:
+  symlinks:
+    "tinyproxy": "#{source_dir}"
