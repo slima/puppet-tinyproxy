@@ -21,7 +21,7 @@ tinyproxy::use_syslog: false
 tinyproxy::use_xtinyproxy: false
 tinyproxy::filter_default_deny: false
 tinyproxy::filter_file: '/etc/tinyproxy/filter.conf'
-tinyproxy::filter_extended: ~
+tinyproxy::filter_extended: false
 tinyproxy::user: 'nobody'
 tinyproxy::group: 'nogroup'
 tinyproxy::add_headers: ~
