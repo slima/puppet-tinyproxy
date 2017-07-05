@@ -64,7 +64,7 @@ class tinyproxy (
   Boolean $use_xtinyproxy,
   Optional[String] $filter_default_deny,
   Optional[String] $filter_file,
-  Optional[String] $filter_extended,
+  Boolean $filter_extended,
   Optional[String] $user,
   Optional[String] $group,
   Optional[Hash[String, String]] $add_headers,

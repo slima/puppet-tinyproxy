@@ -10,18 +10,4 @@ describe 'install tinyproxy' do
       apply_manifest(pp, :catch_changes => true)
     end
   end
-
-  context 'Configuring white list' do
-    it 'should generate filter file' do
-      pp = <<-EOS
-      class { 'tinyproxy':
-        filter_default_deny => 'Yes',
-        filter_file         => '/etc/tinyproxy/filter_test.conf',
-        filter_extended     => 'On'
-      }
-      EOS
-      apply_manifest(pp, :catch_failures => true)
-      apply_manifest(pp, :catch_changes => true)
-    end
-  end
 end

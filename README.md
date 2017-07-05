@@ -1,13 +1,11 @@
 # tinyproxy
-[![Build Status](https://travis-ci.org/shazi7804/puppet-tinyproxy.svg?branch=master)](https://travis-ci.org/shazi7804/puppet-tinyproxy)
+[![Build Status](https://travis-ci.org/shazi7804/puppet-tinyproxy.svg?branch=master)](https://travis-ci.org/shazi7804/puppet-tinyproxy) [![Puppet Forge](https://img.shields.io/puppetforge/dt/shazi7804/tinyproxy.svg?style=flat-square)](https://forge.puppet.com/shazi7804/tinyproxy) [![Puppet Forge](https://img.shields.io/puppetforge/v/shazi7804/tinyproxy.svg?style=flat-square)](https://forge.puppet.com/shazi7804/tinyproxy)
 
 
 #### Table of Contents
 
 1. [Description](#description)
 1. [Setup - The basics of getting started with tinyproxy](#setup)
-    * [What tinyproxy affects](#what-tinyproxy-affects)
-    * [Setup requirements](#setup-requirements)
     * [Beginning with tinyproxy](#beginning-with-tinyproxy)
 1. [Usage - Configuration options and additional functionality](#usage)
 1. [Reference - An under-the-hood peek at what the module is doing and how](#reference)
@@ -38,9 +36,12 @@ include '::tinyproxy'
 
 ```puppet
 class { '::tinyproxy':
+  port              => 3128,
   allow_hosts       => ['192.168.0.0/24','172.16.0.0/24'],
-  max_clients       => '128',
-  max_spare_servers => '128'
+  max_clients       => 128,
+  max_spare_servers => 256,
+  min_spare_servers => 64,
+
 }
 ```
 
@@ -48,10 +49,9 @@ class { '::tinyproxy':
 
 ```puppet
 class { '::tinyproxy':
-  filter_default_deny => 'Yes',
-  filter_file         => '/etc/tinyproxy/tinyproxy_filter.conf',
-  filter_extended     => 'On'.
-  manage_filter       => true,
+  filter_default_deny => true,
+  filter_file         => '/etc/tinyproxy/filter.conf',
+  filter_extended     => true
 }
 ```
 
@@ -61,7 +61,6 @@ class { '::tinyproxy::filter':
               '^github\.com$',]
 }
 ```
-
 
 ## Reference
 
@@ -77,3 +76,22 @@ class { '::tinyproxy::filter':
 * tinyproxy::config: Handles the config.
 * tinyproxy::filter: Handles the filter list.
 * tinyproxy::service: Handles the service.
+
+## Limitations
+
+This module has been tested platform on:
+
+* Red Hat Enterprise Linux (RHEL) 6, 7
+* CentOS 6, 7
+* Debian 6, 7
+* Ubuntu 16.04
+
+## Development
+
+Puppet modules on the Puppet Forge are open projects, and community contributions are essential for keeping them great. Please follow our guidelines when contributing changes.
+
+For more information, see our [module contribution guide.](https://docs.puppetlabs.com/forge/contributing.html)
+
+### Contributors
+
+To see who's already involved, see the [list of contributors.](https://github.com/puppetlabs/puppetlabs-ntp/graphs/contributors)

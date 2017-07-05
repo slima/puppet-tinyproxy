@@ -35,13 +35,13 @@ Syslog Yes
 XTinyproxy On
 <% end -%>
 <% if @filter_default_deny -%>
-FilterDefaultDeny <%= @filter_default_deny %>
+FilterDefaultDeny Yes
 <% end -%>
 <% if @filter_file -%>
 Filter "<%= @filter_file %>"
 <% end -%>
 <% if @filter_extended -%>
-FilterExtended <%= @filter_extended %>
+FilterExtended On
 <% end -%>
 User <%= @user %>
 Group <%= @group %>

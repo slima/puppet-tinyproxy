@@ -1,5 +1,6 @@
 {
   "name": "shazi7804-tinyproxy",
+  "description": "Tinyproxy Module for Debian, Ubuntu, CentOS and RHEL.",
   "version": "0.1.0",
   "author": "shazi7804",
   "summary": "Install, deploysm, and configures tinyproxy services.",
@@ -7,13 +8,23 @@
   "source": "https://github.com/shazi7804/puppet-tinyproxy",
   "project_page": "https://github.com/shazi7804/puppet-tinyproxy",
   "issues_url": "https://github.com/shazi7804/puppet-tinyproxy/issues",
+  "tags": [
+    "tinyproxy",
+    "forward",
+    "proxy"
+  ],
   "dependencies": [
+  ],
+  "requirements": [
+    {
+      "name": "puppet",
+      "version_requirement": "4.7.0 < 5.0.0"
+    }
   ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
       "operatingsystemrelease": [
-        "5",
         "6",
         "7"
       ]
@@ -21,7 +32,6 @@
     {
       "operatingsystem": "CentOS",
       "operatingsystemrelease": [
-        "5",
         "6",
         "7"
       ]
@@ -37,17 +47,8 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "10.04",
-        "12.04",
-        "14.04",
         "16.04"
       ]
-    }
-  ],
-  "requirements": [
-    {
-      "name": "puppet",
-      "version_requirement": ">= 4.9.0"
     }
   ]
 }
