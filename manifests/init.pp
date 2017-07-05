@@ -62,7 +62,7 @@ class tinyproxy (
   Optional[String] $stat_file,
   Boolean $use_syslog,
   Boolean $use_xtinyproxy,
-  Optional[String] $filter_default_deny,
+  Boolean $filter_default_deny,
   Optional[String] $filter_file,
   Boolean $filter_extended,
   Optional[String] $user,
